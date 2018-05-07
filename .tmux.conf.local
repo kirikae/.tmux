@@ -145,17 +145,10 @@ tmux_conf_theme_left_separator_main=''
 tmux_conf_theme_left_separator_sub='|'
 tmux_conf_theme_right_separator_main=''
 tmux_conf_theme_right_separator_sub='|'
-<<<<<<< HEAD
-#tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
-#tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
-#tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
-#tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see README.md
-=======
 #tmux_conf_theme_left_separator_main=''  # /!\ you don't need to install Powerline
 #tmux_conf_theme_left_separator_sub=''   #   you only need fonts patched with
 #tmux_conf_theme_right_separator_main='' #   Powerline symbols or the standalone
 #tmux_conf_theme_right_separator_sub=''  #   PowerlineSymbols.otf font
->>>>>>> Updated .tmux.conf.local:
 
 # status left/right content:
 #   - separate main sections with '|'
@@ -181,17 +174,8 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-<<<<<<< HEAD
 tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
-#tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-#tmux_conf_theme_status_right='#{prefix}#{pairing} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
-=======
-tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-#tmux_conf_theme_status_left=' ❐ #S'
-tmux_conf_theme_status_right='#{prefix}#{pairing} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
->>>>>>> Updated .tmux.conf.local:
-#tmux_conf_theme_status_right='#{prefix}#{pairing} #{?battery_status, #{battery_status},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
 
 # status left style
 tmux_conf_theme_status_left_fg='#232936,#9aa7bd,#ffffff'  # black, white , white
@@ -280,27 +264,9 @@ tmux_conf_theme_clock_style='24'
 # on Linux, this requires xsel or xclip
 tmux_conf_copy_to_os_clipboard=true
 
-# -- vim integration -----------------------------------------------------------
-# Smart pane switching with awareness of Vim splits.
-# See: https://github.com/christoomey/vim-tmux-navigator
-#is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-#    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
-#bind-key -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
-#bind-key -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
-#bind-key -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
-#bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
-#bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
-#bind-key -T copy-mode-vi C-h select-pane -L
-#bind-key -T copy-mode-vi C-j select-pane -D
-#bind-key -T copy-mode-vi C-k select-pane -U
-#bind-key -T copy-mode-vi C-l select-pane -R
-#bind-key -T copy-mode-vi C-\ select-pane -l
 
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
-
-# address vim mode switching delay (http://superuser.com/a/252717/65504)
-set -s escape-time 0
 
 # increase history / scrollback buffer size
 set -g history-limit 50000
@@ -335,10 +301,6 @@ bind C-a send-prefix
 # move status line to top
 #set -g status-position top
 
-<<<<<<< HEAD
 # Duplicate commands to all Panes in the current Window
-=======
-# send keystrokes too all panes in the current window
 # This vaguely emulates similar functionality as terminators groups
->>>>>>> cf07d38... Updated .tmux.conf.local to include send-keys-all-panes shortcut
 bind -n C-x setw synchronize-panes
