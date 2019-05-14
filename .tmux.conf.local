@@ -266,8 +266,7 @@ tmux_conf_battery_vbar_palette='gradient'
 tmux_conf_battery_status_charging='🔌 '    # U+1F50C
 tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
 
-# clock style (when you hit <prefix> + t)
-# you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
+# clock style
 tmux_conf_theme_clock_colour='#00afff'  # light blue
 tmux_conf_theme_clock_style='24'
 
@@ -300,8 +299,23 @@ tmux_conf_copy_to_os_clipboard=true
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
-# increase history size
-set -g history-limit 10000
+# address vim mode switching delay (http://superuser.com/a/252717/65504)
+set -s escape-time 0
+
+# increase history / scrollback buffer size
+set -g history-limit 50000
+
+# refresh 'status-left' and 'status-right' more often
+set -g status-interval 5
+
+# upgrade $TERM
+set -g default-terminal "screen-256color"
+
+# focus events enabled for terminals that support them
+set -g focus-events on
+
+# super useful when using "grouped sessions" and multi-monitor setup
+setw -g aggressive-resize on
 
 # start with mouse mode enabled
 set -g mouse on
